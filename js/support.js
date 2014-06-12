@@ -1,13 +1,17 @@
 /**
  * Created by wufulin on 14-6-11.
  */
+var documentWidth = window.screen.availWidth;
+var gridContainerWidth = 0.92 * documentWidth;
+var cellSideLength = 0.18 * documentWidth;
+var cellSpace = 0.04 * documentWidth;
 
 function getPosTop(i, j){
-    return 20 + 120 *i;
+    return cellSpace + (cellSideLength + cellSpace) * i;
 }
 
 function getPosLeft(i, j){
-    return 20 + 120 *j;
+    return cellSpace + (cellSideLength + cellSpace) * j;
 }
 
 function getNumberBackgroundColor(number){

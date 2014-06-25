@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .wrapper{
+            width: 200px; height: 200px;
+            border: 1px dotted red;
+            margin: 100px auto;
+        }
+        .wrapper div{
+            width: 200px;height: 200px;
+            line-height: 200px;
+            text-align: center;
+            background: orange;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+        .wrapper span{
+            display: block;
+        }
+
+        .wrapper1{
+            width: 300px;
+            height: 100px;
+            border: 2px dotted red;
+            margin: 30px auto;
+        }
+
+        .wrapper1 div{
+            width: 300px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            color: #ffffff;
+            background: orange;
+            -webkit-transform: skew(45deg);
+            -moz-transform: skew(45deg);
+            -ms-transform: skew(45deg);
+            -o-transform: skew(45deg);
+            transform: skew(45deg);
+        }
+        .wrapper1 span{
+            display: block;
+            -webkit-transform: skew(-45deg);
+            -moz-transform: skew(-45deg);
+            -ms-transform: skew(-45deg);
+            -o-transform: skew(-45deg);
+            transform: skew(-45deg);
+        }
+
+        .wrapper2,.wrapper3,.wrapper4,.wrapper5,.wrapper6,
+        .wrapper7{
+            width: 200px;
+            height: 200px;
+            border: 2px dotted red;
+            margin: 100px auto;
+        }
+
+        .wrapper2 div{
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            background: orange;
+            text-align: center;
+            color: #ffffff;
+        }
+        .wrapper2 div:hover{
+            opacity: 0.5;
+            -webkit-transform: scale(1.5);
+            -moz-transform: scale(1.5);
+            -ms-transform: scale(1.5);
+            -o-transform: scale(1.5);
+            transform: scale(1.5);
+        }
+
+        .wrapper3 div{
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            background: orange;
+            color: #ffffff;
+            -webkit-transform: translate(50px, 100px);
+            -moz-transform: translate(50px, 100px);
+            -ms-transform: translate(50px, 100px);
+            -o-transform: translate(50px, 100px);
+            transform: translate(50px, 100px);
+        }
+
+        .wrapper4 div{
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            background: orange;
+            color: #ffffff;
+            -webkit-transform: matrix(1, 0, 0, 1, 50, 50);
+            -moz-transform: matrix(1, 0, 0, 1, 50, 50);
+            -ms-transform: matrix(1, 0, 0, 1, 50, 50);
+            -o-transform: matrix(1, 0, 0, 1, 50, 50);
+            transform: matrix(1, 0, 0, 1, 50, 50);
+        }
+        .wrapper div{
+            -webkit-transform-origin: 0 0;
+            -moz-transform-origin: 0 0;
+            -ms-transform-origin: 0 0;
+            -o-transform-origin: 0 0;
+            transform-origin: 0 0;
+        }
+        .wrapper5 div{
+            background-color: red;
+            width: 100%;
+            height: 100%;
+            -webkit-transition: background-color 0.5s ease-in .1s;
+            -moz-transition: background-color 0.5s ease-in .1s;
+            -ms-transition: background-color 0.5s ease-in .1s;
+            -o-transition: background-color 0.5s ease-in .1s;
+            transition: background-color 0.5s ease-in .1s;
+        }
+        .wrapper5 div:hover{
+            background-color: orange;
+        }
+        .wrapper6 div{
+            background-color: orange;
+            width: 100%;
+            height: 100%;
+            -webkit-transition-property: height;
+            -moz-transition-property: height;
+            -ms-transition-property: height;
+            -o-transition-property: height;
+            transition-property: height;
+
+            -webkit-transition-duration: 1s;
+            -moz-transition-duration: 1s;
+            -ms-transition-duration: 1s;
+            -o-transition-duration: 1s;
+            transition-duration: 1s;
+
+            -webkit-transition-timing-function: ease-out;
+            -moz-transition-timing-function: ease-out;
+            -ms-transition-timing-function: ease-out;
+            -o-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+
+            -webkit-transition-delay: .2s;
+            -moz-transition-delay: .2s;
+            -ms-transition-delay: .2s;
+            -o-transition-delay: .2s;
+            transition-delay: .2s;
+        }
+        .wrapper6 div:hover{
+            height: 100px;
+        }
+        
+        .wrapper7 div{
+            width: 100%;
+            height: 100%;
+            background-color: orange;
+            -webkit-transition: border-radius 1s ease-in-out .2s;
+            -moz-transition: border-radius 1s ease-in-out .2s;
+            -ms-transition: border-radius 1s ease-in-out .2s;
+            -o-transition: border-radius 1s ease-in-out .2s;
+            transition: border-radius 1s ease-in-out .2s;
+        }
+        .wrapper7 div:hover{
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            border-radius: 100%;
+        }
+
+        .wrapper8{
+            width: 400px;
+            height: 400px;
+            margin: 20px auto;
+            border: 2px dotted red;
+        }
+        .wrapper8 div{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            -webkit-transition: all .28s ease-in .1s;
+            -moz-transition: all .28s ease-in .1s;
+            -ms-transition: all .28s ease-in .1s;
+            -o-transition: all .28s ease-in .1s;
+            transition: all .28s ease-in .1s;
+        }
+        
+        .wrapper8 div:hover{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div><span>我不想旋转(＞﹏＜)</span></div>
+    </div>
+    <div class="wrapper1">
+        <div><span>我不想被扭曲(＞﹏＜)</span></div>
+    </div>
+    <div class="wrapper2">
+        <div><span>我将放大1.5倍(＞﹏＜)</span></div>
+    </div>
+    <div class="wrapper3">
+        <div><span>我将向右向下移动(＞﹏＜)</span></div>
+    </div>
+    <div class="wrapper4">
+        <div><span>matrix矩阵移动(＞﹏＜)</span></div>
+    </div>
+    <div class="wrapper5">
+        <div></div>
+    </div>
+    <div class="wrapper6">
+        <div></div>
+    </div>
+    <div class="wrapper7">
+        <div></div>
+    </div>
+    <div class="wrapper8">
+        <div>鼠标放到我的身上来</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background: #333;
+            overflow: hidden;
+        }
+        #canvas{
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        ul, li{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        li{
+            /*display: table-cell;*/
+            /*vertical-align: middle;*/
+            display: -webkit-box;
+            -webkit-box-pack: center;
+            -webkit-box-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- 外层画布 -->
+    <div id="canvas">
+        <ul>
+            <li style="height: 568px; -webkit-transform:translate3d(0,0,0)">
+                <img width="320" src="http://img.hb.aicdn.com/ec1608f514bdec5a26c92663f7a96bc3225dbc3e9c31-XMNyxp_fw236">
+            </li>
+            <li style="height: 568px; -webkit-transform:translate3d(320px,0,0)">
+                <img width="320" src="http://img.hb.aicdn.com/bd10f9add78248d51fe67cccd263604a0bbc3d87a010-8GNKoZ_fw236">
+            </li>
+            <li style="height: 568px">
+                <img width="320" src="http://img.hb.aicdn.com/74874c03eafbb46996fbb813c59860a1f5aaf58137ca6-xtt9Wg_fw236">
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var list = [
+
+        ];
+
+        function Slider(opts){
+            this.wrap = opts.dom;
+            this.list = opts.list;
+
+            // 构造三部曲
+            this.init();
+            this.renderDOM();
+            this.bindDOM();
+        }
+
+        Slider.prototype.init = function(){
+            // 窗口长宽比
+            this.radio = window.innerHeight / window.innerWidth;
+
+            this.scaleW = window.innerWidth;
+
+            // 当前图片的索引
+            this.idx = 0;
+        };
+
+        Slider.prototype.renderDOM = function(){
+            var wrap = this.wrap;
+            var data = this.list;
+            var len = data.length;
+
+            this.outer = document.createElement('ul');
+            for(var i = 0; i < len; i++){
+                var li = document.createElement('li');
+                var item = data[i];
+
+                li.style.width = window.innerWidth + 'px';
+            }
+        };
+
+        new Slider({
+            'dom': document.getElementById('canvas'),
+            'list': list
+        })
+    </script>
+</body>
+</html>

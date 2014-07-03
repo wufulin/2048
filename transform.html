@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title></title>
     <style type="text/css">
+
         .wrapper{
             width: 200px; height: 200px;
             border: 1px dotted red;
@@ -85,11 +86,36 @@
             text-align: center;
             background: orange;
             color: #ffffff;
-            -webkit-transform: translate(50px, 100px);
-            -moz-transform: translate(50px, 100px);
-            -ms-transform: translate(50px, 100px);
-            -o-transform: translate(50px, 100px);
-            transform: translate(50px, 100px);
+
+            -webkit-transition: -webkit-transform .5s ease;
+            -moz-transition: -webkit-transform .5s ease;
+            -ms-transition: -webkit-transform .5s ease;
+            -o-transition: -webkit-transform .5s ease;
+            transition: -webkit-transform .5s ease;
+
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .wrapper3 div:hover{
+            -webkit-transform: translate3d(500px, 0, 0);
+            -moz-transform: translate3d(500px, 0, 0);
+            -ms-transform: translate3d(500px, 0, 0);
+            -o-transform: translate3d(500px, 0, 0);
+            transform: translate3d(500px, 0, 0);
+
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            backface-visibility: hidden;
+
+            -webkit-perspective: 1000;
+            -moz-perspective: 1000;
+            -ms-perspective: 1000;
+            perspective: 1000;
         }
 
         .wrapper4 div{
@@ -195,6 +221,41 @@
             height: 300px;
             background-color: red;
         }
+
+        .wrapper9{
+            width: 300px;
+            height: 200px;
+            background: #ff0000;
+            color: #ffffff;
+            margin: 20px auto;
+        }
+        .wrapper9:hover{
+            -webkit-animation: changecolor 5s ease-out .2s;
+            -o-animation: changecolor 5s ease-out .2s;
+            animation: changecolor 5s ease-out .2s;
+        }
+
+        @-webkit-keyframes changecolor{
+            0% {
+                background: #ff0000;
+            }
+            20%{
+                background: blue;
+            }
+            40%{
+                background: orange;
+            }
+            60%{
+                background: green;
+            }
+            80%{
+                background: yellow;
+            }
+            100%{
+                background: #ff0000;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -225,5 +286,8 @@
     <div class="wrapper8">
         <div>鼠标放到我的身上来</div>
     </div>
+
+
+    <div class="wrapper9">鼠标放到我的身上来</div>
 </body>
 </html>

@@ -144,5 +144,21 @@
             });
         }
     });
+
+//    zWin.scroll(function(){
+//        var scrollHeight = zWin.scrollTop() || document.documentElement.scrollTop || document.body.scrollTop;
+//        var screenHeight = zWin.height() || document.documentElement.clientHeight || document.body.clientHeight;
+//        var sideHeight = 100;
+//        if(scrollHeight + screenHeight > sideHeight){
+//        }
+//    });
+
+    var addEvent = function(obj, event, callback){
+        if(obj.addEventListener){
+            obj.addEventListener(event, callback,false);
+        }else if(obj.attachEvent){
+            obj.attachEvent('on'+ event, callback)
+        }
+    };
 </script>
 </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <ul id="wrap"></ul>
+    <ul data-role="listview" data-inset="true">
+        <script id="tmpl-restaurants" type="text/template">
+            <% _.each(data, function(restaurant){%>
+                <li>
+                    <a href="#" data-rel="back" data-value="<%- restaurant.name %>">
+                        <%- restaurant.name %>
+                    </a>
+                </li>
+            <% }); %>
+        </script>
+    </ul>
+</body>
+<script type="text/javascript" src="libs/zepto.min.js"></script>
+<script type="text/javascript" src="libs/underscore-min.js"></script>
+<script type="text/javascript">
+
+    var restaurants = [
+        {
+            "name": "KFC"
+        },
+        {
+            "name": "7-11"
+        },
+        {
+            "name": "成都小吃"
+        }
+    ];
+
+    var template = _.template("hello: <%= name %>");
+    console.log(template({name:'moe'}));
+
+    var list = "<% _.each(people, function(name){%> <li><%= name %></li> <% }); %>";
+    var listComplied = _.template(list, {people:['moe', 'curly','larry']});
+
+    document.getElementById("wrap").innerHTML = listComplied;
+
+    $("#tmpl-restaurants").replaceWith(
+        _.template($('#tmpl-restaurants').html(),{data: restaurants})
+    );
+</script>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title></title>
+    <script type="text/javascript">
+        (function(){
+            if('ontouchstart' in window){
+                window.addEventListener('load', function(){
+                    FastClick.attach(document.body);
+                })
+            }
+        })();
+    </script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            background-color: #eee;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            -ms-touch-action: manipulation; /* IE 10  */
+            touch-action: manipulation; /* IE 11+ */
+        }
+
+        button{
+            outline: 0;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        header {
+            position: relative;
+            margin: 30px auto 0;
+            width: 320px;
+            height: 44px;
+            line-height: 44px;
+        }
+
+        header button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 44px;
+            background: none;
+            cursor: pointer;
+            outline: 0;
+        }
+
+        header h1 {
+            line-height: inherit;
+            font-size: inherit;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-weight: normal;
+        }
+
+
+        /* iOS STYLES */
+        .ios header {
+            font-family: 'HelveticaNeue', Arial, sans-serif;
+            font-size: 17px;
+            background-color: #f7f7f7;
+            padding: 0 88px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .ios header button {
+            color: rgb(21, 125, 251);
+            padding-left: 24px;
+        }
+
+        .ios header button:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            margin-top: -6px;
+            left: 10px;
+            width: 10px;
+            height: 10px;
+            border: 3px solid rgb(21, 125, 251);
+            border-right: none;
+            border-top: none;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .ios header button:hover {
+            color: rgba(21, 125, 251, 0.3);
+        }
+
+        .ios header button:hover:before {
+            border-color: rgba(21, 125, 251, 0.3);
+        }
+
+        .ios header h1 {
+            font-weight: bold;
+            font: -apple-system-headline;
+            text-align: center;
+        }
+
+        /* Normal-resolution CSS */
+        .logo {
+            width: 120px;
+            background: url(logo.png) no-repeat 0 0;
+        }
+
+        /* HD and Retina CSS */
+        @media
+        only screen and (-webkit-min-device-pixel-ratio: 1.25),
+        only screen and ( min--moz-device-pixel-ratio: 1.25),
+        only screen and ( -o-min-device-pixel-ratio: 1.25/1),
+        only screen and ( min-device-pixel-ratio: 1.25),
+        only screen and ( min-resolution: 200dpi),
+        only screen and ( min-resolution: 1.25dppx) {
+            .logo {
+                background: url(logo@2x.png) no-repeat 0 0;
+                background-size: 120px; /* Equal to normal logo width */
+            }
+        }
+    </style>
+</head>
+<body class="ios">
+<header>
+    <button class="back">Feed</button>
+    <h1>Details</h1>
+    <!-- more actions (e.g. a search button on the right side) -->
+</header>
+</body>
+</html>

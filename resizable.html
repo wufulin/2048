@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Resizable</title>
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+            padding: 50px;
+            font-size: 14px;
+            color: #333333;
+        }
+        .panel{
+            width: 400px;
+            height: 240px;
+            border: 1px solid #ccc;
+            position: relative;;
+        }
+        .panel .title{
+            background-color: #eeeeee;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid #ffffff;
+            font-weight: bold;
+        }
+        .ui-resizable-b{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 10px;
+            background-color: blue;
+            cursor: s-resize;
+        }
+        .ui-resizable-r{
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 10px;
+            height: 100%;
+            background-color: green;
+            cursor: e-resize;
+        }
+        .ui-resizable-rb{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 20px;
+            width: 20px;
+            background-color: red;
+            cursor: nw-resize;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel" id="ui-resizable">
+        <div class="title">Resizable Panel</div>
+    </div>
+</body>
+<script type="text/javascript">
+    function Resizable(panel_id){
+        var panel = document.getElementById(panel_id);
+
+        var r = document.createElement('div');
+        var b = document.createElement('div');
+        var rb = document.createElement('div');
+
+        r.class = r.className = 'ui-resizable-r ui-resizable-ctrl';
+        b.class = b.className = 'ui-resizable-b ui-resizable-ctrl';
+        rb.class = rb.className = 'ui-resizable-rb ui-resizable-ctrl';
+
+        panel.appendChild(r);
+        panel.appendChild(b);
+        panel.appendChild(rb);
+    }
+    Resizable("ui-resizable");
+</script>
+</html>
